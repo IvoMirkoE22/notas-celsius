@@ -1,15 +1,24 @@
 package com.celsius.notas;
 
+import java.util.UUID;
+
 // POJO = Plain Old Java Object
 public class Nota {
   // Ctrl + . -> Generar Getters y Setters
+  private String id;
   private String titulo;
   private String contenido;
 
   public Nota(String titulo, String contenido) {
+    this.id=UUID.randomUUID().toString();
     this.titulo = titulo;
     this.contenido = contenido;
   }
+
+  public String getId(){
+    return id;
+  }
+
 
   public String getTitulo() {
     return titulo;
@@ -35,5 +44,8 @@ public class Nota {
     // El control ListView llama automáticamente a este
     // método para obtener el texto a mostrar en la lista
     return titulo;
+  }
+
+  public void add(Nota nota) {
   }
 }
