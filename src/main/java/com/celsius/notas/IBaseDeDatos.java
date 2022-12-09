@@ -6,5 +6,4 @@ public interface IBaseDeDatos {
     void guardar(Nota nota);
     void eliminar(Nota nota);
     List<Nota> listar();
-    
 }
