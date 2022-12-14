@@ -1,11 +1,11 @@
 package com.celsius.notas;
 
-public class BaseDeDatosSingleton {// para que sirve el singelton? que  es? estudiar para el examen
+public class BaseDeDatosSingleton {// para que sirve el singelton? que es? estudiar para el examen
     private static BaseDeDatosSingleton instancia;
     private IBaseDeDatos bd;
 
     private BaseDeDatosSingleton() {
-        bd = new BaseDeDatosMemoria();
+        bd = new BaseDeDatosSQL();
     }
 
     public static BaseDeDatosSingleton getInstancia() {

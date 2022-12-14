@@ -1,4 +1,5 @@
 package com.celsius.notas;
+
 //(f1)
 // Pojo = plain Old Java Object //una clase que representa un tipo con algunos atributos 
 import java.util.UUID;
@@ -10,10 +11,15 @@ public class Nota {
   private String titulo;
   private String contenido;
 
-  //Contructores puedo seleccionar Nota, poner control + . , generate contructor luego selecciono y presiono enter
- //y me genera los contrucctores
-  public Nota(String titulo, String contenido) {
-    this.id = UUID.randomUUID().toString();
+  // Contructores puedo seleccionar Nota, poner control + . , generate contructor
+  // luego selecciono y presiono enter
+  // y me genera los contrucctores
+  public Nota(String id, String titulo, String contenido) {
+    if (id == null) {
+      this.id = UUID.randomUUID().toString();
+    } else {
+      this.id = id;
+    }
     this.titulo = titulo;
     this.contenido = contenido;
   }
@@ -42,19 +48,19 @@ public class Nota {
   }
 
   @Override
-  public String toString() {//metodo publico que devolvera un tipo String
+  public String toString() {// metodo publico que devolvera un tipo String
     // El control ListView llama automáticamente a este
     // método para obtener el texto a mostrar en la lista
-    // return .super.toString();//llama al metodo toString del padre por eso usa super que se usa para acceder a la clase padre de esta clase
-    return titulo;//en este caso quiero que muestre el titulo de la nota
+    // return .super.toString();//llama al metodo toString del padre por eso usa
+    // super que se usa para acceder a la clase padre de esta clase
+    return titulo;// en este caso quiero que muestre el titulo de la nota
   }
 }
 
+// public void add(Nota nota) {
+// }
+// }
 
-//public void add(Nota nota) {
-//}
-//}
-
-  //public void add(Nota nota) {
-  //}
-//}
+// public void add(Nota nota) {
+// }
+// }
